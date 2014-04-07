@@ -35,7 +35,7 @@ var main_state = {
     jump: function() {
       // Add a vertical velocity to the bird
       this.bird.body.velocity.y = -350;
-    }
+    },
 
     restart_game: function() {
       // Start the 'main' state, which restarts the game
