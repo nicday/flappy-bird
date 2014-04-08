@@ -43,8 +43,8 @@ var main_state = {
 
     this.game.physics.overlap(this.bird, this.pipes, this.restart_game, null, this);
 
-    if (this.bird.angle < 20) 
-      this.bird.angle += 1;
+    if (this.bird.angle < 20)  
+        this.bird.angle += 1;
     },
 
     jump: function() {
