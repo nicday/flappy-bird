@@ -41,13 +41,29 @@ var main_state = {
     if (this.bird.inWorld == false)
       this.restart_game();
 
-    this.game.physics.overlap(this.bird, this.pipes, this.restart_game, null, this);
+    this.game.physics.overlap(this.bird, this.pipes, this.hit_pipe, null, this);
 
     if (this.bird.angle < 20)  
         this.bird.angle += 1;
     },
 
+    hit_pipe: function() {
+      if (this.bird.alive == false) 
+        return;
+
+      this.bird.alive = false;
+
+      this.game.time.events.remove(this.timer);
+
+      this.pipes.forEachAlive(function(p) {
+        p.body.velocity.x = 0;
+      }, this);
+    },
+
     jump: function() {
+      if (this.bird.alive == false) 
+        return;
+
       // Add a vertical velocity to the bird
       this.bird.body.velocity.y = -350;
 
