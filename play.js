@@ -21,6 +21,7 @@ var play_state = {
       this.label_score = this.game.add.text(20,20, "0", style);
 
       this.jump_sound = this.game.add.audio('jump');
+      this.dead_bird = this.game.add.audio('dead_bird');
     },
     
     update: function() {
@@ -41,6 +42,7 @@ var play_state = {
         return;
 
       this.bird.alive = false;
+      this.dead_bird.play();
 
       this.game.time.events.remove(this.timer);
 

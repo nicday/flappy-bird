@@ -1,7 +1,5 @@
 var menu_state = {
   create: function() {
-    console.log('menu_state create() called');
-
     // Call the start function when pressing
     // the space bar
     var space_key = this.game.input.keyboard.addKey(Phaser.Keyboard.SPACEBAR);
@@ -22,7 +20,6 @@ var menu_state = {
       score_label.anchor.setTo(0.5, 0.5);
     };
 
-    console.log('====> the issue is after here...');
   },
 
   start: function() {
