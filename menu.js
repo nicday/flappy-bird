@@ -1,9 +1,12 @@
 var menu_state = {
   create: function() {
+    console.log('menu_state create() called');
+
     // Call the start function when pressing
     // the space bar
     var space_key = this.game.input.keyboard.addKey(Phaser.Keyboard.SPACEBAR);
-    space_key.onDown.add(this.start. this);
+    space_key.onDown.add(this.start, this);
+
 
     var style = {font: "30px Arial", fill: '#ffffff'};
     var x = game.world.width / 2,
@@ -18,9 +21,11 @@ var menu_state = {
       var score_label = this.game.add.text(x, y+50, "score: " + score, style);
       score_label.anchor.setTo(0.5, 0.5);
     };
+
+    console.log('====> the issue is after here...');
   },
 
   start: function() {
     this.game.state.start('play');
-  }
+  },
 };

@@ -94,5 +94,5 @@ var play_state = {
 
       score += 1;
       this.label_score.content = score;
-    }
+    },
 };
